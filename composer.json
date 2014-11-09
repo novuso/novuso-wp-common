@@ -1,0 +1,10 @@
+{
+    "name": "novuso/novuso-wp-common",
+    "description": "Common libraries for Novuso WordPress development",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4.0",
+        "composer/installers": "~1.0"
+    }
+}
