@@ -138,49 +138,49 @@ if (!function_exists('novuso_wp_common_register_styles')):
  */
 function novuso_wp_common_register_styles() {
     $vers = [
-        'bootstrap-css'            => '3.3.0',
-        'bootstrap-theme-css'      => '3.3.0',
-        'datatables-bootstrap-css' => '1.10.4',
-        'font-awesome-css'         => '4.2.0',
-        'swipebox-css'             => '1.3.0.2',
-        'videojs-css'              => '4.10.2'
+        'bootstrap'            => '3.3.0',
+        'bootstrap-theme'      => '3.3.0',
+        'datatables-bootstrap' => '1.10.4',
+        'font-awesome'         => '4.2.0',
+        'swipebox'             => '1.3.0.2',
+        'videojs'              => '4.10.2'
     ];
 
     $debug = (defined('WP_DEBUG') && WP_DEBUG) ? true : false;
     $basePath = trailingslashit(NOVUSO_WP_COMMON_URL).'assets/css/';
 
     // Bootstrap CSS
-    $handle = 'bootstrap-css';
+    $handle = 'bootstrap';
     $source = $basePath.'bootstrap-'.$vers[$handle].($debug ? '' : '.min').'.css';
     $deps = [];
     wp_register_style($handle, $source, $deps, null);
 
     // Bootstrap Theme CSS
-    $handle = 'bootstrap-theme-css';
+    $handle = 'bootstrap-theme';
     $source = $basePath.'bootstrap-theme-'.$vers[$handle].($debug ? '' : '.min').'.css';
-    $deps = ['bootstrap-css'];
+    $deps = ['bootstrap'];
     wp_register_style($handle, $source, $deps, null);
 
     // DataTables Bootstrap CSS
-    $handle = 'datatables-bootstrap-css';
+    $handle = 'datatables-bootstrap';
     $source = $basePath.'dataTables.bootstrap-'.$vers[$handle].($debug ? '' : '.min').'.css';
-    $deps = ['bootstrap-css'];
+    $deps = ['bootstrap'];
     wp_register_style($handle, $source, $deps, null);
 
     // Font Awesome
-    $handle = 'font-awesome-css';
+    $handle = 'font-awesome';
     $source = $basePath.'font-awesome-'.$vers[$handle].($debug ? '' : '.min').'.css';
     $deps = [];
     wp_register_style($handle, $source, $deps, null);
 
     // Swipebox
-    $handle = 'swipebox-css';
+    $handle = 'swipebox';
     $source = $basePath.'swipebox-'.$vers[$handle].($debug ? '' : '.min').'.css';
     $deps = [];
     wp_register_style($handle, $source, $deps, null);
 
     // VideoJS
-    $handle = 'videojs-css';
+    $handle = 'videojs';
     $source = $basePath.'videojs-'.$vers[$handle].($debug ? '' : '.min').'.css';
     $deps = [];
     wp_register_style($handle, $source, $deps, null);

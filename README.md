@@ -16,12 +16,12 @@ TODO
 
 ## Project Maintained CSS
 
-* [bootstrap-css](http://getbootstrap.com/)
-* [bootstrap-theme-css](http://getbootstrap.com/)
-* [datatables-bootstrap-css](https://github.com/DataTables/Plugins/)
-* [font-awesome-css](http://fortawesome.github.io/Font-Awesome/)
-* [swipebox-css](http://brutaldesign.github.io/swipebox/)
-* [videojs-css](http://www.videojs.com/)
+* [bootstrap](http://getbootstrap.com/)
+* [bootstrap-theme](http://getbootstrap.com/)
+* [datatables-bootstrap](https://github.com/DataTables/Plugins/)
+* [font-awesome](http://fortawesome.github.io/Font-Awesome/)
+* [swipebox](http://brutaldesign.github.io/swipebox/)
+* [videojs](http://www.videojs.com/)
 
 ## Project Maintained JavaScript
 
