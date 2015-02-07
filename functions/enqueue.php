@@ -14,19 +14,20 @@ if (!function_exists('novuso_wp_common_register_scripts')):
 function novuso_wp_common_register_scripts() {
     $vers = [
         'backstretch'          => '2.0.4',
-        'bootstrap'            => '3.3.0',
+        'bootstrap'            => '3.3.2',
         'datatables'           => '1.10.4',
         'datatables-bootstrap' => '1.10.4',
-        'jquery-spin'          => '2.0.1',
-        'marionette'           => '2.2.2',
+        'jquery-spin'          => '2.0.2',
+        'marionette'           => '2.3.2',
         'markdown'             => '0.5.0',
         'modernizr'            => '2.8.3',
-        'moment'               => '2.8.3',
-        'moment-intl'          => '2.8.3',
+        'moment'               => '2.9.0',
+        'moment-intl'          => '2.9.0',
         'respond'              => '1.4.2',
-        'spin'                 => '2.0.1',
+        'spin'                 => '2.0.2',
         'swipebox'             => '1.3.0.2',
-        'videojs'              => '4.10.2'
+        'videojs-core'         => '4.11.4',
+        'videojs'              => '4.11.4'
     ];
 
     $debug = (defined('WP_DEBUG') && WP_DEBUG) ? true : false;
@@ -124,11 +125,19 @@ function novuso_wp_common_register_scripts() {
     wp_register_script($handle, $source, $deps, null, $footer);
 
     // VideoJS
-    $handle = 'videojs';
+    $handle = 'videojs-core';
     $source = $basePath.'videojs-'.$vers[$handle].($debug ? '' : '.min').'.js';
     $deps = ['modernizr'];
     $footer = true;
     wp_register_script($handle, $source, $deps, null, $footer);
+    // videojs config for swf fallback
+    $handle = 'videojs';
+    $source = $basePath.'videojs-'.$vers[$handle].'.conf.js';
+    $deps = ['videojs-core'];
+    $footer = true;
+    wp_register_script($handle, $source, $deps, null, $footer);
+    $swfPath = $basePath.'videojs-'.$vers[$handle].'.swf';
+    wp_localize_script($handle, 'novuso_wp_common', ['videojs' => ['swf_path' => $swfPath]]);
 }
 endif;
 
@@ -138,12 +147,12 @@ if (!function_exists('novuso_wp_common_register_styles')):
  */
 function novuso_wp_common_register_styles() {
     $vers = [
-        'bootstrap'            => '3.3.0',
-        'bootstrap-theme'      => '3.3.0',
+        'bootstrap'            => '3.3.2',
+        'bootstrap-theme'      => '3.3.2',
         'datatables-bootstrap' => '1.10.4',
         'font-awesome'         => '4.2.0',
         'swipebox'             => '1.3.0.2',
-        'videojs'              => '4.10.2'
+        'videojs'              => '4.11.4'
     ];
 
     $debug = (defined('WP_DEBUG') && WP_DEBUG) ? true : false;

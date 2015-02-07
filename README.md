@@ -8,11 +8,35 @@ Register CSS and JavaScript libraries that are not available in WordPress core.
 
 ## Installation
 
-TODO
+If you use Composer to manage WordPress dependencies, simply add the following
+line to your composer.json file:
+
+    "novuso/novuso-wp-common": "~0.2"
+
+And run `composer update` and this plugin will be installed in your configured
+plugin folder using the [composer/installers](https://github.com/composer/installers)
+project.
+
+If you are not using Composer, you can download this project and place the
+entire contents in a `novuso-wp-common` folder in your plugins folder. In that
+case, you will need to periodically update manually (which sort of defeats the purpose).
 
 ## Usage
 
-TODO
+Just use the normal process to enqueue [scripts](http://codex.wordpress.org/Function_Reference/wp_enqueue_script)
+and [styles](http://codex.wordpress.org/Function_Reference/wp_enqueue_style) in WordPress.
+
+The handle names listed below are registered once the plugin is active.
+
+Here are some examples of how to load the assets in a theme `functions.php` file:
+
+    // functions.php
+    function mytheme_load_assets() {
+        wp_enqueue_script('bootstrap');
+        wp_enqueue_style('bootstrap');
+        wp_enqueue_script('marionette');
+    }
+    add_action('wp_enqueue_scripts', 'mytheme_load_assets');
 
 ## Project Maintained CSS
 
@@ -39,75 +63,6 @@ TODO
 * [spin](http://fgnass.github.io/spin.js/)
 * [swipebox](http://brutaldesign.github.io/swipebox/)
 * [videojs](http://www.videojs.com/)
-
-## Existing Core JavaScript
-
-Last updated: `v4.0`
-
-* [jcrop](http://deepliquid.com/content/Jcrop.html)
-* [jquery](http://jquery.com/)
-* [jquery-form](http://jquery.malsup.com/form/)
-* [jquery-color](https://github.com/jquery/jquery-color)
-* [jquery-masonry](http://masonry.desandro.com/)
-* [masonry](http://masonry.desandro.com/)
-* [jquery-ui-core](http://jqueryui.com/)
-* [jquery-ui-widget](http://jqueryui.com/)
-* [jquery-ui-mouse](http://jqueryui.com/)
-* [jquery-ui-accordion](http://jqueryui.com/accordion/)
-* [jquery-ui-autocomplete](http://jqueryui.com/autocomplete/)
-* [jquery-ui-slider](http://jqueryui.com/slider/)
-* [jquery-ui-progressbar](http://jqueryui.com/progressbar/)
-* [jquery-ui-tabs](http://jqueryui.com/tabs/)
-* [jquery-ui-sortable](http://jqueryui.com/sortable/)
-* [jquery-ui-draggable](http://jqueryui.com/draggable/)
-* [jquery-ui-droppable](http://jqueryui.com/droppable/)
-* [jquery-ui-selectable](http://jqueryui.com/selectable/)
-* [jquery-ui-position](http://jqueryui.com/position/)
-* [jquery-ui-datepicker](http://jqueryui.com/datepicker/)
-* [jquery-ui-tooltip](http://jqueryui.com/tooltip/)
-* [jquery-ui-resizable](http://jqueryui.com/resizable/)
-* [jquery-ui-dialog](http://jqueryui.com/dialog/)
-* [jquery-ui-button](http://jqueryui.com/button/)
-* [jquery-effects-core](http://jqueryui.com/effect/)
-* [jquery-effects-blind](http://jqueryui.com/effect/)
-* [jquery-effects-bounce](http://jqueryui.com/effect/)
-* [jquery-effects-clip](http://jqueryui.com/effect/)
-* [jquery-effects-drop](http://jqueryui.com/effect/)
-* [jquery-effects-explode](http://jqueryui.com/effect/)
-* [jquery-effects-fade](http://jqueryui.com/effect/)
-* [jquery-effects-fold](http://jqueryui.com/effect/)
-* [jquery-effects-highlight](http://jqueryui.com/effect/)
-* [jquery-effects-pulsate](http://jqueryui.com/effect/)
-* [jquery-effects-scale](http://jqueryui.com/effect/)
-* [jquery-effects-shake](http://jqueryui.com/effect/)
-* [jquery-effects-slide](http://jqueryui.com/effect/)
-* [jquery-effects-transfer](http://jqueryui.com/effect/)
-* [wp-mediaelement](http://mediaelementjs.com/)
-* [schedule](http://trainofthoughts.org/blog/2007/02/15/jquery-plugin-scheduler/)
-* [suggest](https://web.archive.org/web/20111017233444/http://plugins.jquery.com/project/suggest)
-* [thickbox](http://codex.wordpress.org/ThickBox)
-* [hoverIntent](http://cherne.net/brian/resources/jquery.hoverIntent.html)
-* [jquery-hotkeys](http://plugins.jquery.com/project/hotkeys)
-* [sack](https://code.google.com/p/tw-sack/)
-* [quicktags](http://www.alexking.org/)
-* [iris](https://github.com/automattic/Iris)
-* [tiny_mce](http://www.tinymce.com/)
-* [json2](https://github.com/douglascrockford/JSON-js)
-* [pupload](http://www.plupload.com/)
-* [plupload-all](http://www.plupload.com/example_all_runtimes.php)
-* [plupload-html4](http://www.plupload.com/example_all_runtimes.php)
-* [plupload-html5](http://www.plupload.com/example_all_runtimes.php)
-* [plupload-flash](http://www.plupload.com/example_all_runtimes.php)
-* [plupload-silverlight](http://www.plupload.com/example_all_runtimes.php)
-* [underscore](http://underscorejs.org/)
-* [backbone](http://backbonejs.org/)
-
-Other registered scripts include:
-
-swfobject, swfupload, swfupload-degrade, swfupload-queue, swfupload-handlers, autosave, wp-ajax-response,
-wp-lists, common, editorremov, editor-functions, ajaxcat, admin-categories, admin-tags, admin-custom-fields,
-password-strength-meter, admin-comments, admin-users, admin-forms, xfn, upload, postbox, slug, post, page,
-link, comment, comment-reply, admin-gallery, media-upload, admin-widgets, word-count, theme-preview
 
 ## License
 
