@@ -8,7 +8,7 @@
  * License: MIT
  *
  * @author    John Nickell
- * @copyright Copyright (c) 2014, Novuso. (http://novuso.com/)
+ * @copyright Copyright (c) 2015, Novuso. (http://novuso.com/)
  * @license   http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 
