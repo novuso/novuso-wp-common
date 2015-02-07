@@ -150,7 +150,7 @@ function novuso_wp_common_register_styles() {
         'bootstrap'            => '3.3.2',
         'bootstrap-theme'      => '3.3.2',
         'datatables-bootstrap' => '1.10.4',
-        'font-awesome'         => '4.2.0',
+        'font-awesome'         => '4.3.0',
         'swipebox'             => '1.3.0.2',
         'videojs'              => '4.11.4'
     ];

@@ -4,7 +4,7 @@
  * Author: The Novuso development team
  * Author URI: http://novuso.com
  * Description: Common libraries for Novuso WordPress development
- * Version: 0.2.0
+ * Version: 0.2.1
  * License: MIT
  *
  * @author    John Nickell
